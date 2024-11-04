@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+  
+  body {
+    @apply antialiased text-gray-900;
+  }
+}
+
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 5px #ff4d4d, 0 0 10px #ff4d4d, 0 0 15px #ff4d4d;
+  }
+  50% {
+    box-shadow: 0 0 20px #ff4d4d, 0 0 25px #ff4d4d, 0 0 30px #ff4d4d;
+  }
+  100% {
+    box-shadow: 0 0 5px #ff4d4d, 0 0 10px #ff4d4d, 0 0 15px #ff4d4d;
+  }
+}
+
+.btn-glow {
+  animation: glowing 2s infinite;
+  transition: all 0.3s ease;
+}
+
+.btn-glow:hover {
+  animation: none;
+  box-shadow: 0 0 20px #ff4d4d;
+}
+
+@keyframes onlineGlow {
+  0% {
+    box-shadow: 0 0 2px #22c55e, 0 0 4px #22c55e;
+  }
+  50% {
+    box-shadow: 0 0 4px #22c55e, 0 0 8px #22c55e;
+  }
+  100% {
+    box-shadow: 0 0 2px #22c55e, 0 0 4px #22c55e;
+  }
+}
+
+.online-status {
+  animation: onlineGlow 2s infinite;
+  padding-right: 16px !important;
+}
+
+.online-dot {
+  position: relative;
+  padding-right: 12px;
+}
+
+.online-dot::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #22c55e;
+  border-radius: 50%;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: onlineGlow 2s infinite;
+}
+
+/* Phone input mask styling */
+input[type="tel"]::placeholder {
+  color: #9CA3AF;
+}
+
+input[type="tel"]:focus::placeholder {
+  color: #D1D5DB;
+}
+
+/* Textarea autoresize */
+textarea {
+  resize: vertical;
+  min-height: 100px;
+  max-height: 300px;
+}

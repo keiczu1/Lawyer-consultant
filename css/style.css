@@ -1,0 +1,123 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Consultation Types Section */
+.consultation-types {
+    padding: 64px 0;
+    background: #fff;
+}
+
+.consultation-types h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #1a1a1a;
+    margin-bottom: 48px;
+}
+
+.consultation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+}
+
+.consultation-card {
+    padding: 24px;
+    background: #f9fafb;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+}
+
+.consultation-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.icon-wrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #fee2e2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.icon-wrapper i {
+    color: #ef4444;
+    font-size: 24px;
+}
+
+.consultation-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.consultation-card p {
+    font-size: 0.875rem;
+    color: #4b5563;
+    line-height: 1.5;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .consultation-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .consultation-types {
+        padding: 32px 0;
+    }
+    
+    .consultation-types h2 {
+        font-size: 1.5rem;
+        margin-bottom: 32px;
+    }
+}
+
+/* Icons */
+@font-face {
+    font-family: 'legal-icons';
+    src: url('../fonts/legal-icons.woff2') format('woff2');
+}
+
+[class^="icon-"] {
+    font-family: 'legal-icons' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-home:before { content: "\e900"; }
+.icon-scale:before { content: "\e901"; }
+.icon-scroll:before { content: "\e902"; }
+.icon-shield-check:before { content: "\e903"; }
+/* Add other icon codes as needed */
